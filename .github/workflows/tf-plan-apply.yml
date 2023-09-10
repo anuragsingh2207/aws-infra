@@ -7,7 +7,7 @@ on:
 
 jobs:
   terraform_apply:
-    name: Terraform Apply
+    name: Terraform Plan & Apply
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Code
