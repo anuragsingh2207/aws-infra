@@ -49,7 +49,7 @@ resource "aws_instance" "instance1" {
   ami             = var.imageid
   instance_type   = var.instancetype
   key_name        = var.key
-  security_groups = ["${aws_security_group.sg1.name}"] #Resource outputs
+  vpc_security_group_ids = ["${aws_security_group.sg1.id}"]
 
   tags = {
     Name = "instance1"
