@@ -20,6 +20,11 @@ variable "instancetype" {
 
 }
 
+# Key
+variable "key" {
+
+  default = "MUMKEY"
+}
 
 # Public Key
 variable "pub_key" {
