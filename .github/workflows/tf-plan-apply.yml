@@ -25,20 +25,19 @@ jobs:
 
 
       - name: Terraform Init
-        id: init
-        run: terraform init
+        run: |
+          cd terraform/
+          terraform init
 
       - name: Terraform Validate
         run: terraform validate 
 
       - name: Terraform Plan
         run: |
-          cd terraform/
           terraform plan -out tfplan
 
       - name: Terraform Apply
         run: |
-          cd terraform/
           terraform apply tfplan
        
   
