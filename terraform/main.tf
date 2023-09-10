@@ -85,7 +85,7 @@ resource "aws_internet_gateway" "igw1" {
 
 #NAT Gateway
 resource "aws_nat_gateway" "ngw1" {
-  subnet_id     = aws_subnet.subnet1.id
+  subnet_id = aws_subnet.subnet1.id
 
   tags = {
     Name = "ngw1"
