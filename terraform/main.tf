@@ -53,14 +53,13 @@ resource "aws_key_pair" "key1" {
   }
 }
 
-
 #EC2
 resource "aws_instance" "instance1" {
-  ami             = var.imageid
-  instance_type   = var.instancetype
-  key_name        = var.key
+  ami                    = var.imageid
+  instance_type          = var.instancetype
+  key_name               = var.key
   vpc_security_group_ids = ["${aws_security_group.sg1.id}"]
-  subnet_id     = aws_subnet.subnet1.id
+  subnet_id              = aws_subnet.subnet1.id
 
   tags = {
     Name = "instance1"
@@ -72,4 +71,10 @@ resource "aws_instance" "instance1" {
 
   }
 
+}
+
+#Elastic IP
+resource "aws_eip" "eip1" {
+  instance = aws_instance.instance1.id
+  domain   = "vpc"
 }
