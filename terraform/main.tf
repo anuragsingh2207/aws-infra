@@ -29,7 +29,7 @@ resource "aws_security_group" "sg1" {
   }
 
   tags = {
-    Name = "allow_tls"
+    Name = "sg1"
   }
 }
 
