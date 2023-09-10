@@ -15,7 +15,7 @@ resource "aws_security_group" "sg1" {
     from_port   = 443
     to_port     = 443
     protocol    = "tcp"
-    cidr_blocks = ["${aws_vpc.vpc1.cidr_block}"] 
+    cidr_blocks = ["${aws_vpc.vpc1.cidr_block}"]
   }
 
   egress {
@@ -51,7 +51,7 @@ resource "aws_instance" "instance1" {
 
   connection {
     user        = "ec2-user"
-    private_key = file(var.private_key_path) 
+    private_key = file(var.private_key_path)
 
   }
 
