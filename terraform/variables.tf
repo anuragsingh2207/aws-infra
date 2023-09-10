@@ -8,7 +8,7 @@ variable "region" {
 # AMI Id
 variable "imageid" {
 
-  default = "ami-01c647eace872fc02"
+  default = "ami-02bb7d8191b50f4bb"
 
 }
 
