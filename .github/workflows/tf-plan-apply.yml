@@ -24,20 +24,9 @@ jobs:
           aws-region: ap-south-1
 
 
-      - name: Terraform Init
+      - name: Terraform Init, Plan & Apply
         run: |
           cd terraform/
           terraform init
-
-      - name: Terraform Validate
-        run: terraform validate 
-
-      - name: Terraform Plan
-        run: |
-          terraform plan -out tfplan
-
-      - name: Terraform Apply
-        run: |
+          terraform plan -out tfplan 
           terraform apply tfplan
-       
-  
