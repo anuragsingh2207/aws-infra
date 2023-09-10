@@ -1,6 +1,9 @@
 #VPC
 resource "aws_vpc" "vpc1" {
   cidr_block = "10.0.0.0/16"
+  tags = {
+    Name = "vpc1"
+  }
 }
 
 
@@ -35,6 +38,9 @@ resource "aws_security_group" "sg1" {
 resource "aws_key_pair" "key1" {
   key_name   = "MUMKEY"
   public_key = var.pub_key
+  tags = {
+    Name = "key1"
+  }
 }
 
 
