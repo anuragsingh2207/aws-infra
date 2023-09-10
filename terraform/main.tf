@@ -6,6 +6,16 @@ resource "aws_vpc" "vpc1" {
   }
 }
 
+#Subnet
+resource "aws_subnet" "subnet1" {
+  vpc_id     = aws_vpc.vpc1.id
+  cidr_block = "10.0.1.0/24"
+
+  tags = {
+    Name = "subnet1"
+  }
+}
+
 
 #SG
 resource "aws_security_group" "sg1" {
@@ -50,6 +60,7 @@ resource "aws_instance" "instance1" {
   instance_type   = var.instancetype
   key_name        = var.key
   vpc_security_group_ids = ["${aws_security_group.sg1.id}"]
+  subnet_id     = aws_subnet.subnet1.id
 
   tags = {
     Name = "instance1"
